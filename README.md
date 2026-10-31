@@ -1,159 +1,122 @@
-# CATALYST — Integrated AICTE Approval Workflow Automation, Compliance Monitoring and Alert Management System
+# 🏛️ CATALYST (PRAVAHA) — AICTE Approval Workflow Automation & Compliance System
 
-> **Smart India Hackathon 2026**  
-> **Problem Statement ID:** 26262  
-> **Theme:** Smart Automation  
-> **Category:** Software  
-> **Team Name:** Catalyst  
-> **Demonstration Notice:** *SIH 2026 Prototype — Demonstration Only; Not an Official AICTE System.*
+> **Smart India Hackathon 2026** | **Problem Statement ID:** 26262  
+> **Theme:** Smart Automation | **Category:** Software | **Team Name:** Catalyst  
+> **Regulatory Foundation:** AICTE Approval Process Handbook (APH) 2024–2027 & AICTE Act Section 10(k)  
+> **Notice:** *SIH 2026 Prototype — Demonstration Only; Not an Official Ministry of Education / AICTE System.*
 
 ---
 
 ## 🌟 Executive Summary
 
-**CATALYST** is a full-stack automated regulatory governance portal designed to streamline technical education institutional approvals for the **All India Council for Technical Education (AICTE)**. Built in alignment with the **AICTE Approval Process Handbook (APH) 2024–2027**, CATALYST centralizes the complete petition lifecycle:
+**CATALYST** (registered in Git as **PRAVAHA**) is an automated regulatory governance portal designed to streamline institutional technical education approvals for the **All India Council for Technical Education (AICTE)**. Built in alignment with statutory frameworks under the AICTE Approval Process Handbook, CATALYST centralizes the end-to-end petition lifecycle:
 
-- **Automated Workflow Orchestration:** Governs strict transitions through `Submitted` ➔ `Scrutiny` ➔ `Re-Scrutiny` ➔ `EVC Visit` ➔ `Final Decision` under AICTE Act Section 10(k).
-- **Proactive Institutional Compliance:** Monitors mandatory land deeds, building stability certificates, and notarized anti-ragging affidavits.
-- **Expert Visiting Committee (EVC) Logistics:** Coordinates physical infrastructure inspection panels, observations, and rescheduling.
+- **Automated Workflow Orchestration:** Governs strict transitions through `Submitted` ➔ `Scrutiny` ➔ `Re-Scrutiny` ➔ `EVC Visit` ➔ `Final Decision`.
+- **Proactive Compliance & Undertakings:** Monitors land deeds, building stability certificates, and notarized anti-ragging affidavits with deterministic status calculators (`upcoming`, `due-today`, `overdue`, `submitted`, `verified`, `expired`).
+- **Expert Visiting Committee (EVC) Operations:** Coordinates physical inspection panels, external academic experts (IIT/NIT faculty), asset checklists, and observation reports.
 - **Explainable Multi-Tier Escalations:** Autonomously escalates overdue deadlines across Level 1 (Regional Office), Level 2 (Bureau Head), and Level 3 (Competent Authority).
-- **Key SIH Innovation — Regulatory Rule Simulation:** A zero-risk policy digital twin enabling authorities to simulate modifications to statutory SLA timelines and test impacts against live institutional pipelines *before* publishing official notifications.
-- **Verifiable Audit Trail:** Maintains chronological, immutable logs with before/after state diffs for complete regulatory accountability.
+- **Key SIH Innovation — Regulatory Rule Simulation:** A zero-risk policy digital twin enabling authorities to simulate modifications to statutory SLA timelines and test impacts against live institutional pipelines *before* publishing official gazette notifications.
+- **Verifiable Audit Trail:** Maintains chronological, immutable logs with before/after state diffs for regulatory accountability.
 
 ---
 
-## 🚀 Running the Prototype Locally
+## ⚡ Quick-Start (Up & Running in 2 Minutes)
 
-The application runs using Vite, React 18, and TypeScript:
+### Prerequisites:
+- **Node.js**: v18.0.0 or higher (v20.x or v22.x LTS recommended). Check with `node -v`.
+- **npm**: v9.0.0 or higher. Check with `npm -v`.
+- **Git**: v2.30.0 or higher. Check with `git --version`.
 
+### Execution:
 ```bash
-# 1. Install dependencies (Node.js LTS installed)
+# 1. Clone the repository
+git clone https://github.com/tanned366/PRAVAHA.git
+cd PRAVAHA
+
+# 2. Install dependencies
 npm install
 
-# 2. Start the local development server
+# 3. Start the local development server
 npm run dev
-
-# 3. Access the web portal
-# Open http://localhost:5173 in your web browser
 ```
 
-To build for production:
-```bash
-npm run build
-```
+> [!NOTE]
+> **Windows PowerShell Users:** If you see an execution policy error (`npm.ps1 cannot be loaded`), run:
+> ```powershell
+> npm.cmd install
+> npm.cmd run dev
+> ```
+
+Open **`http://localhost:5173/`** in your browser.
 
 ---
 
-## 👥 5 Demonstration Roles & Context Switcher
+## 👥 5 Demonstration Personas & Role Switcher
 
-Click the **Role Switcher** pill in the top navbar or visit the **SIH Judge Demo Guide** in the sidebar to toggle between personas:
+Click the **Role Switcher** pill in the top navbar or visit `/walkthrough` in the sidebar to toggle between personas:
 
 | Demo Role | Representative Persona | Designation & Jurisdiction | Key Permissions |
 | :--- | :--- | :--- | :--- |
-| **Institution User** | Dr. Rameshwar Sharma | Principal, Kalinga Institute of Advanced Technology | Submit new EoA/Intake petitions; upload statutory affidavits and compliance evidence; view status. |
-| **Regional Officer** | Er. Sunita Mukherjee | Regional Officer, Eastern Regional Office (ERO) | Scrutinize documents; issue deficiency memos; pass scrutiny; recommend EVC; verify compliance evidence. |
-| **EVC Committee Member** | Prof. K. Venkatesh (Retd. IIT) | EVC Committee Chairman | View scheduled physical visits; review lab equipment checklists; submit inspection findings. |
-| **Competent Authority** | Prof. (Dr.) Manju Singh | Member Secretary & Advisor (Approval Bureau) | Final statutory sanction / rejection orders under Section 10(k); review critical escalated breaches. |
-| **System Administrator** | Catalyst Admin | SIH Technical Daemon | Configure SLA thresholds; launch Regulatory Rule Simulator; inspect audit logs; reset demonstration data. |
+| **Institution User** | Dr. Rameshwar Sharma | Principal, Kalinga Institute of Advanced Technology (ERO) | Submit new EoA/Intake petitions; upload statutory affidavits and compliance evidence; track status. |
+| **Regional Officer** | Er. Sunita Mukherjee | Regional Officer, Eastern Regional Office (ERO), Kolkata | Scrutinize documents; issue deficiency memos; pass scrutiny; recommend EVC; verify compliance evidence. |
+| **EVC Committee Member** | Prof. K. Venkatesh (Retd. IIT) | EVC Committee Chairman (SRO) | View scheduled physical visits; review lab equipment checklists; submit inspection findings. |
+| **Competent Authority** | Prof. (Dr.) Manju Singh | Member Secretary & Advisor (Approval Bureau), AICTE HQ | Final statutory sanction / rejection orders under Section 10(k); review critical escalated breaches. |
+| **System Administrator** | Catalyst Admin | SIH Lead Administrator | Configure SLA thresholds; launch Regulatory Rule Simulator; inspect audit logs; reset demonstration data. |
 
 ---
 
-## 📑 Complete System Pages & Architectural Modules
+## 🛠️ Technology Stack
 
-1. **Dashboard (`/`)**
-   - 8 primary metric counters with instant drill-down filtering
-   - Interactive SVG application workflow stage funnel (Submitted to Decision)
-   - Visual compliance health donut chart
-   - High-priority active alert feed and recent petitions
-
-2. **Application Directory (`/applications`)**
-   - Comprehensive table with search, sorting, and pagination
-   - Multi-criteria filters: Stage, Status, Regional Office, Petition Type, and SLA Overdue toggle
-   - One-click navigation to full application dossier
-
-3. **Application Submission Portal (`/new-application`)**
-   - 4-step wizard validating email, required fields, and statutory declarations
-   - Pre-submission verification review screen
-   - Autonomous generation of unique AICTE application tracking IDs and audit log events
-
-4. **Application Detail Dossier (`/application-detail`)**
-   - Complete institutional data, academic disciplines, and proposed intake
-   - Visual workflow progress tracker
-   - **Role-Authorized Stage Transitions:** Enforces permissions, mandatory written reasons, and adverse decision warnings
-   - Document checklist, compliance records, EVC status, linked alerts, and audit history tabs
-
-5. **Approval Workflow Engine**
-   - Configurable stages: `Submitted` ➔ `Scrutiny` ➔ `Re-Scrutiny` ➔ `EVC` ➔ `Final Decision`
-   - Configurable EVC requirement per petition category (e.g. New Institution vs EoA)
-   - Authorized rollback capabilities with mandatory justifications
-
-6. **Institutional Compliance & Undertakings (`/compliance`)**
-   - Tracks document validity, statutory affidavits (Anti-ragging, non-encumbrance, land conversion)
-   - Deterministic status calculator (`upcoming`, `due-today`, `overdue`, `submitted`, `verified`, `expired`)
-   - Verification action modal for ROs and evidence upload modal for institutions
-
-7. **EVC Committee Operations (`/evc`)**
-   - Panel composition (Chairman, external experts, RO coordinator)
-   - Visit scheduling, appointment calendar, and lab verification checklists
-   - Record committee inspection reports and record formal delay/rescheduling reasons
-
-8. **Alerts & Explainable Escalation Center (`/alerts`)**
-   - Deterministic SLA monitoring against current reference date (30-Oct-2026)
-   - Root cause transparency engine explaining *why* each alert was generated
-   - Multi-tier escalation: Level 1 (RO) ➔ Level 2 (Bureau Head) ➔ Level 3 (Competent Authority)
-   - Acknowledge, resolve, and manual escalation triggers
-   - Simulated email and SMS outbox status
-
-9. **Chronological Audit Trail (`/audit`)**
-   - Filterable, searchable transaction log with actor role, action code, timestamp, and entity diffs
-   - Export full audit ledger to CSV format
-   - Demonstration integrity disclosure
-
-10. **Regulatory Rule Simulation — Key SIH Innovation (`/simulation`)**
-    - Interactive parameter slider testing adjustments to scrutiny windows, cure periods, and EVC deadlines
-    - Real-time impact analysis on live applications without mutating live data
-    - Before-vs-after comparison table showing deadline shifts and newly overdue breaches
-    - Plain-language executive impact summary
-    - Authorized ratification mechanism saving new rule versions (e.g. v2.0) with audit logging
-
-11. **Document Vault (`/documents`)**
-    - Repository of institutional deeds, building plans, and fire NOCs
-    - Safe simulated metadata, versions, and verification stamps
-
-12. **System Administration & Settings (`/settings`)**
-    - Instant demo persona switcher
-    - AICTE Handbook SLA reference parameters
-    - Simulated notification channel preferences
-    - Destructive **Reset Demo Data** action with confirmation modal
-
-13. **SIH Judge Demo Guide (`/walkthrough`)**
-    - 6-step guided walkthrough sequence for evaluation judges
-    - Automated core quality test checklist
+| Layer | Technology | Details |
+| :--- | :--- | :--- |
+| **Frontend Framework** | React 18 (`^18.3.1`) | Functional components, hooks, concurrent rendering |
+| **Language** | TypeScript (`^5.7.3`) | Strict static type safety across all domain models |
+| **Build Tool & Bundler** | Vite (`^6.1.0`) | Instant HMR and optimized Rollup asset bundling |
+| **Styling** | Tailwind CSS (`^3.4.17`) | Custom AICTE color system (`aicte.navy`, `aicte.teal`, `aicte.accent`) |
+| **Icons** | Lucide React (`^1.16.0`) | Accessible SVG iconography |
+| **State & Persistence** | React Context + LocalStorage | Zero-backend local persistence across browser refreshes |
 
 ---
 
-## 💾 Persistence Architecture & Backend Enablement
+## 🧪 Verification & Production Build
 
-### Current Active Mode: **Local Persistence (Demo Mode)**
-- State is preserved in the browser's `localStorage` across page refreshes, tab closures, and system restarts.
-- Click **Reset Data** in the top navbar or settings at any time to restore pristine seed records.
+### Static Type Check & Bundle Compilation:
+```bash
+npm run build
+# On Windows PowerShell:
+npm.cmd run build
+```
+- **Observed Result:** Exit code 0 (Pass).
+- **Bundle Output:** Emits optimized assets in `/dist` without errors.
 
-### Enabling Supabase / PostgreSQL:
-The prototype is architecturally prepared for Supabase. To switch from local storage to persistent PostgreSQL:
-1. Create a project at [supabase.com](https://supabase.com).
-2. Set environment variables in `.env`:
-   ```env
-   VITE_SUPABASE_URL=https://your-project.supabase.co
-   VITE_SUPABASE_ANON_KEY=eyJhbGciOi...
-   ```
-3. Run the schema migrations (matching `src/types/index.ts`).
-4. The application automatically detects client configuration and routes mutations through Supabase PostgreSQL tables with Row-Level Security (RLS).
+### Interactive Demonstration / Judge Walkthrough:
+Navigate to **Judge Walkthrough** (`/walkthrough`) in the sidebar for an automated 6-step guided walkthrough covering petition filing, RO scrutiny, EVC reporting, Section 10(k) sanction, policy simulation, and audit logging.
 
 ---
 
-## 🔒 Security, Honesty & System Disclaimers
+## 📚 Complete Developer Handover Package
 
-1. **Fictional Data Only:** All institutions, officer names, email addresses, and application identifiers in this prototype are fictional demonstration records.
-2. **Regulatory Notice:** This software was designed for **Smart India Hackathon 2026 (Problem Statement 26262)** and has not been officially validated by AICTE or the Ministry of Education.
-3. **Simulated Integrations:** Email dispatches, SMS notifications, and cloud document storage are simulated client-side metadata representations.
-4. **No API Keys Exposed:** No secret keys or paid API credentials are embedded in client bundles.
+Comprehensive technical documentation is maintained in the [`docs/handover/`](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/) directory:
+
+1. [⚡ Quick-Start Guide](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/QUICK_START.md): 3-minute onboarding answering the 10 vital developer questions.
+2. [📋 Project Overview](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/PROJECT_OVERVIEW.md): Problem background, regulatory scope, personas, and implemented vs. planned features.
+3. [🏛️ System Architecture](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/ARCHITECTURE.md): Component relationships, workflow state machine, and Mermaid diagrams.
+4. [📁 File & Directory Structure](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/FILE_STRUCTURE.md): Codebase map, module descriptions, and recommended reading order.
+5. [💻 Setup & Run Guide](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/SETUP_AND_RUN.md): Step-by-step setup on clean machines with common troubleshooting tips.
+6. [🔐 Environment Variables](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/ENVIRONMENT_VARIABLES.md): Environment variables, `.env.example`, and security practices.
+7. [🗄️ Database & Data Architecture](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/DATABASE_AND_DATA.md): LocalStorage keys, ER diagram, seed data, and target PostgreSQL DDL schema.
+8. [🔌 API & State Dispatcher Reference](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/API_REFERENCE.md): Action dispatchers, parameters, side effects, and planned REST endpoints.
+9. [🧪 Testing & Debugging Guide](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/TESTING_AND_DEBUGGING.md): Build verification, DevTools debugging, and test gaps.
+10. [🚀 Deployment & Hosting Guide](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/DEPLOYMENT.md): Deployment guides for Vercel, Netlify, Cloudflare Pages, and Docker/Nginx.
+11. [🔄 Features & Workflows](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/FEATURES_AND_WORKFLOWS.md): Detailed walk-through of the 6 major user workflows and business validations.
+12. [🧠 Technical Decisions & Known Issues](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/DECISIONS_AND_KNOWN_ISSUES.md): Rationale behind key architectural choices, technical debt, and assumptions.
+13. [🗺️ Next Steps & Engineering Roadmap](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/NEXT_STEPS.md): Prioritized engineering backlog for upcoming development sprints.
+14. [🤝 Friend Handover Checklist](file:///c:/Users/Vaibhav/Documents/antigravity/prot-sih/docs/handover/FRIEND_HANDOVER_CHECKLIST.md): Step-by-step transition checklist for sharing the project with your teammate.
+
+---
+
+## 🔒 Security & Fictional Data Disclosure
+
+1. **Demonstration Records:** All institutions, officer names, email addresses, and application numbers are fictional demonstration records.
+2. **No Secret Exposures:** No private keys, cloud tokens, or database passwords are embedded in client bundles.
+3. **Statutory Context:** Designed for Smart India Hackathon 2026 (Problem Statement 26262).
